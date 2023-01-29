@@ -1,7 +1,4 @@
-
-
 // let acivity_list = document.querySelector("#acivity-list") as HTMLUListElement
-
 
 interface IActivity {
   name: string;
@@ -23,8 +20,8 @@ class Tracker {
   }
 
   render() {
-    const acitivityList = document.getElementById("acitivity-list")
-    acitivityList.innerHTML=""
+    const activityList = document.querySelector("#activity-list") as HTMLDivElement
+    activityList.innerHTML = ""
 
     this.activities.forEach(activity => {
       const acitivityItem = document.createElement("div")
@@ -36,14 +33,14 @@ class Tracker {
 
       acitivityItem.addEventListener("click", () => this.openModal(activity))
 
-      acitivityList?.appendChild(acitivityItem)
+      activityList.appendChild(acitivityItem)
     })
 
   }
 
 
   openModal(activity: IActivity) {
-    const modal = document.querySelector("#habit-modal")
+    const modal = document.querySelector("#activity-modal") as HTMLDivElement
     modal.innerHTML = `
       <h2>${activity.name}</h2>
       <img src="${activity.imgUrl}" alt="${activity.name}" />
@@ -51,14 +48,17 @@ class Tracker {
       <button id="delete-btn">Delete</button>
     `
 
-    const deleteButton = document.querySelector("#delete-btn")
-    deleteButton.addEventListener("click", () => this.deleteActivity(activity))
+    const deleteButton = document.querySelector("#delete-btn") as HTMLButtonElement
+    deleteButton.addEventListener("click", () => {
+      this.deleteActivity(activity)
+      this.closeModal()
+    })
 
     modal.style.display = "block"
   }
 
   closeModal() {
-    const modal = document.querySelector("#habit-modal")
+    const modal = document.querySelector("#activity-modal") as HTMLDivElement
     modal.style.display = "none"
   }
   
@@ -67,12 +67,15 @@ class Tracker {
 
 const activityTracker = new Tracker()
 
-const add_btn = document.querySelector("#add-btn") as HTMLInputElement
+const submit_btn = document.querySelector("#submit-activity-btn") as HTMLInputElement
 
-add_btn.addEventListener("click", () => {
-  const nameInput = document.querySelector("#task-name") as HTMLInputElement
+submit_btn.addEventListener("click", () => {
+  const nameInput = document.querySelector("#name") as HTMLInputElement
+  const imgUrlInput = document.getElementById("image-url") as HTMLInputElement
   const startDateInput = document.querySelector("#start-date") as HTMLInputElement
-  const imgUrlInput = document.querySelector("#img-url") as HTMLInputElement
+  console.log(nameInput.value)
+  console.log(startDateInput.value)
+  console.log(imgUrlInput.value)
 
   if (!nameInput.value || !imgUrlInput.value || !startDateInput.value) {
     alert("Please fill out all fields.")

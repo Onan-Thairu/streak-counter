@@ -13,25 +13,21 @@
   <div class="container">
     <div class="header">
       <div>
-        <ion-icon name="add-circle-outline" size="large"></ion-icon>
+        <ion-icon name="add-circle-outline" size="large" id="add-activity-icon"></ion-icon>
       </div>
       <h1>Welcome to Streak Counter</h1>
     </div>
 
-    <div class="activities">
-      <p>You Don't Have Any Activity</p>
-      <div id="activity-list"></div>
-    </div>
-
     <div class="activity-form">
-      <ion-icon name="close-outline" size="large" id="add-activity-icon"></ion-icon>
-      
-      <!-- <form style="display: none;"> -->
-      <form>
+      <div>
+        <ion-icon name="close-outline" size="large" id="close-form-icon"></ion-icon>
+      </div>
+
+      <div>
         <h3>Please Add A Task</h3>
 
-        <label for="task-name">Task Name</label><br>
-        <input type="text" id="task-name" required><br>
+        <label for="name">Task Name</label><br>
+        <input type="text" id="name" required><br>
 
         <label for="image-url">Image</label><br>
         <input type="text" id="image-url" required><br>
@@ -39,9 +35,16 @@
         <label for="start-date">Start</label><br>
         <input type="date" id="start-date" required><br>
 
-        <button type="submit" id="add-btn">Add Task</button>
-      </form>
+        <button type="submit" id="submit-activity-btn">Add Task</button>
+      </div>
     </div>
+
+    <div id="activity-list" class="activities">
+      <p>You Don't Have Any Activity</p>
+      <div ></div>
+    </div>
+
+    <div id="activity-modal"></div>
 
   </div>
 
