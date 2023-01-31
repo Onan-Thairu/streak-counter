@@ -1,4 +1,5 @@
 import Tracker from "./classes/tracker.js";
+import BestDoneActivity from "./classes/bestDoneActivity.js";
 const activityTracker = new Tracker();
 const submit_btn = document.querySelector("#submit-activity-btn");
 submit_btn.addEventListener("click", () => {
@@ -15,5 +16,7 @@ submit_btn.addEventListener("click", () => {
         startDate: new Date(startDateInput.value)
     };
     activityTracker.addActivity(activity);
+    const bestDay = new BestDoneActivity(activityTracker).getBestDoneActivity();
+    console.log(bestDay);
 });
 //# sourceMappingURL=index.js.map

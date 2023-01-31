@@ -1,4 +1,5 @@
 import Tracker  from "./classes/tracker.js"
+import BestDoneActivity from "./classes/bestDoneActivity.js"
 import { IActivity } from "./interfaces/activity.js"
 
 const activityTracker = new Tracker()
@@ -22,5 +23,9 @@ submit_btn.addEventListener("click", () => {
   }
 
   activityTracker.addActivity(activity)
+
+  const bestDay = new BestDoneActivity(activityTracker).getBestDoneActivity()
+
+  console.log(bestDay)
 
 })
