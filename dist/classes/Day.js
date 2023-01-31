@@ -8,4 +8,4 @@
 //     this.streakC.activities.
 //   }
 // }
-//# sourceMappingURL=Day.js.map
+//# sourceMappingURL=day.js.map

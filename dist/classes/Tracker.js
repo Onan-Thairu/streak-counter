@@ -1,4 +1,4 @@
-export class Tracker {
+class Tracker {
     constructor() {
         this.activities = [];
     }
@@ -44,4 +44,5 @@ export class Tracker {
         modal.style.display = "none";
     }
 }
-//# sourceMappingURL=Tracker.js.map
+export default Tracker;
+//# sourceMappingURL=tracker.js.map

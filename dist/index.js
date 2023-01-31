@@ -1,4 +1,4 @@
-import { Tracker } from "./classes/Tracker";
+import Tracker from "./classes/tracker.js";
 const activityTracker = new Tracker();
 const submit_btn = document.querySelector("#submit-activity-btn");
 submit_btn.addEventListener("click", () => {

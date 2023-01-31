@@ -1,6 +1,6 @@
 import { IActivity } from "../interfaces/activity"
 
-export class Tracker {
+class Tracker {
   public activities: IActivity[] = []
 
   addActivity(activity: IActivity) {
@@ -58,3 +58,5 @@ export class Tracker {
   
 
 }
+
+export default Tracker

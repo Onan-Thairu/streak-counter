@@ -1,5 +1,5 @@
-import { Tracker } from "./classes/Tracker"
-import { IActivity } from "./interfaces/activity"
+import Tracker  from "./classes/tracker.js"
+import { IActivity } from "./interfaces/activity.js"
 
 const activityTracker = new Tracker()
 
