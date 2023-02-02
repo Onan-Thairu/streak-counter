@@ -4,12 +4,21 @@ import { IActivity } from "./interfaces/activity.js"
 
 const activityTracker = new Tracker()
 
+const header = document.querySelector(".header") as HTMLDivElement
+const add_activity_form = document.querySelector(".activity-form") as HTMLDivElement
+
 const submit_btn = document.querySelector("#submit-activity-btn") as HTMLInputElement
 const add_activity = document.querySelector("#add-activity-icon") as HTMLImageElement
+const close_form = document.querySelector("#close-form-icon") as HTMLImageElement
 
 add_activity.addEventListener("click", () => {
-  const header = document.querySelector(".header") as HTMLDivElement
-  header.style.display = "none"
+  header.classList.add("hidden")
+  add_activity_form.classList.remove("hidden")
+})
+
+close_form.addEventListener("click", () => {
+  header.classList.remove("hidden")
+  add_activity_form.classList.add("hidden")
 })
 
 submit_btn.addEventListener("click", () => {
