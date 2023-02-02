@@ -1,3 +1,4 @@
+import Day from "./day.js";
 class BestDoneActivity {
     constructor(streak) {
         this.streakCounter = streak;
@@ -5,10 +6,10 @@ class BestDoneActivity {
     getBestDoneActivity() {
         const activities = this.streakCounter.activities;
         let bestActivity = this.streakCounter.activities[0];
-        let bestDay = new Date().getTime() - new Date(activities[0].startDate).getTime();
+        let days = Day.create(bestActivity).getDays();
         activities.map((activity) => {
-            if (new Date().getTime() - new Date(activity.startDate).getTime() > bestDay) {
-                bestDay = new Date().getTime() - new Date(activity.startDate).getTime();
+            if (Day.create(activity).getDays() > days) {
+                days = Day.create(activity).getDays();
                 bestActivity = activity;
             }
         });

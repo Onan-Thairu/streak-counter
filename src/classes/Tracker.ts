@@ -1,4 +1,5 @@
 import { IActivity } from "../interfaces/activity"
+import Day from "./day.js"
 
 class Tracker {
   public activities: IActivity[] = []
@@ -18,16 +19,16 @@ class Tracker {
     activityList.innerHTML = ""
 
     this.activities.forEach(activity => {
-      const acitivityItem = document.createElement("div")
-      acitivityItem.innerHTML = `
-        <img src="${activity.imgUrl}" alt="${activity.name}">
+      const activityItem = document.createElement("div")
+      activityItem.innerHTML = `
+        <img src="${activity.imgUrl}" alt="${activity.name}" width="50px" >
         <p>${activity.name}</p>
         <p>Started on: ${activity.startDate.toLocaleDateString()}</p>
       `
 
-      acitivityItem.addEventListener("click", () => this.openModal(activity))
+      activityItem.addEventListener("click", () => this.openModal(activity))
 
-      activityList.appendChild(acitivityItem)
+      activityList.appendChild(activityItem)
     })
 
   }
@@ -35,10 +36,13 @@ class Tracker {
 
   openModal(activity: IActivity) {
     const modal = document.querySelector("#activity-modal") as HTMLDivElement
+    const days = Day.create(activity).getDays()
     modal.innerHTML = `
-      <h2>${activity.name}</h2>
-      <img src="${activity.imgUrl}" alt="${activity.name}" />
-      <p>Started on: ${activity.startDate.toLocaleDateString()}</p>
+      <img src="${activity.imgUrl}" alt="${activity.name}" width="50px" />
+      <p>${activity.startDate.toLocaleDateString()}</p>
+      <p>${activity.name}</p>
+      <p>${days} Days</p>
+      <button id="modal-close-btn">Close</button>
       <button id="delete-btn">Delete</button>
     `
 

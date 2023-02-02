@@ -7,8 +7,8 @@ class Day {
         return activity;
     }
     getDays() {
-        const timeInMS = new Date(this.activity.startDate).getTime();
-        const days = timeInMS / (1000 * 3600 * 24);
+        const timeInMS = new Date().getTime() - new Date(this.activity.startDate).getTime();
+        const days = Math.floor(timeInMS / (1000 * 3600 * 24));
         return days;
     }
 }
