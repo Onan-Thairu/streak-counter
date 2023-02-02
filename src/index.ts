@@ -38,6 +38,9 @@ submit_btn.addEventListener("click", () => {
   }
 
   activityTracker.addActivity(activity)
+  nameInput.value = ""
+  imgUrlInput.value = ""
+  startDateInput.value = ""
 
   const bestDay = new BestDoneActivity(activityTracker).getBestDoneActivity()
 

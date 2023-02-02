@@ -9,14 +9,10 @@ const close_form = document.querySelector("#close-form-icon");
 add_activity.addEventListener("click", () => {
     header.classList.add("hidden");
     add_activity_form.classList.remove("hidden");
-    // header.style.display = "none"
-    // add_activity_form.style.display = "block"
 });
 close_form.addEventListener("click", () => {
     header.classList.remove("hidden");
     add_activity_form.classList.add("hidden");
-    // add_activity_form.style.display = "none"
-    // header.style.display = "block"
 });
 submit_btn.addEventListener("click", () => {
     const nameInput = document.querySelector("#name");
@@ -32,6 +28,9 @@ submit_btn.addEventListener("click", () => {
         startDate: new Date(startDateInput.value)
     };
     activityTracker.addActivity(activity);
+    nameInput.value = "";
+    imgUrlInput.value = "";
+    startDateInput.value = "";
     const bestDay = new BestDoneActivity(activityTracker).getBestDoneActivity();
     console.log(bestDay);
 });
