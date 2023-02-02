@@ -23,3 +23,34 @@
 .hidden {
   display: none;
 }
+.new-activity-form {
+  background-color: #fff;
+  color: #fe714c;
+  padding: 1em;
+  border-radius: 5px;
+  width: 40vw;
+}
+.new-activity-form h3 {
+  margin-bottom: 15px;
+}
+input {
+  border: 1px solid #000;
+  outline: none;
+  padding: .5em;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.label-name {
+  margin-bottom: 5px;
+}
+#submit-activity-btn {
+  width: 100%;
+  background-color: #fe714c;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: .8em 0;
+  color: #fff;
+  font-weight: 900;
+}
