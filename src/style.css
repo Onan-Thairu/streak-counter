@@ -12,3 +12,11 @@
   justify-content: space-around;
   color: #fff;
 }
+.activity-form {
+  background-color: #fe714c;
+  display: flex;
+  padding: 2em;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+}

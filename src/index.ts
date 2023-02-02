@@ -5,6 +5,12 @@ import { IActivity } from "./interfaces/activity.js"
 const activityTracker = new Tracker()
 
 const submit_btn = document.querySelector("#submit-activity-btn") as HTMLInputElement
+const add_activity = document.querySelector("#add-activity-icon") as HTMLImageElement
+
+add_activity.addEventListener("click", () => {
+  const header = document.querySelector(".header") as HTMLDivElement
+  header.style.display = "none"
+})
 
 submit_btn.addEventListener("click", () => {
   const nameInput = document.querySelector("#name") as HTMLInputElement
