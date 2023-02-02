@@ -20,10 +20,11 @@ class Tracker {
 
     this.activities.forEach(activity => {
       const activityItem = document.createElement("div")
+      activityItem.classList.add("card")
       activityItem.innerHTML = `
-        <img src="${activity.imgUrl}" alt="${activity.name}" width="50px" >
+        <img src="${activity.imgUrl}" alt="${activity.name}">
+        <p>${activity.startDate.toLocaleDateString()}</p>
         <p>${activity.name}</p>
-        <p>Started on: ${activity.startDate.toLocaleDateString()}</p>
       `
 
       activityItem.addEventListener("click", () => this.openModal(activity))
