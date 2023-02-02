@@ -12,6 +12,9 @@
   justify-content: space-around;
   color: #fff;
 }
+#hero-image {
+  width: 15vw;
+}
 .activity-form {
   background-color: #fe714c;
   display: flex;
