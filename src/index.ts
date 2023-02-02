@@ -11,6 +11,7 @@ const submit_btn = document.querySelector("#submit-activity-btn") as HTMLInputEl
 const add_activity = document.querySelector("#add-activity-icon") as HTMLImageElement
 const close_form = document.querySelector("#close-form-icon") as HTMLImageElement
 
+
 add_activity.addEventListener("click", () => {
   header.classList.add("hidden")
   add_activity_form.classList.remove("hidden")
@@ -42,8 +43,7 @@ submit_btn.addEventListener("click", () => {
   imgUrlInput.value = ""
   startDateInput.value = ""
 
-  const bestDay = new BestDoneActivity(activityTracker).getBestDoneActivity()
 
-  console.log(bestDay)
+  const bestDay = new BestDoneActivity(activityTracker).getBestDoneActivity()
 
 })

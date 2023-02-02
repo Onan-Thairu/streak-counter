@@ -2,7 +2,7 @@ import { IActivity } from "../interfaces/activity"
 import Day from "./day.js"
 
 class Tracker {
-  public activities: IActivity[] = []
+  activities: IActivity[] = []
 
   addActivity(activity: IActivity) {
     this.activities.push(activity)
@@ -31,6 +31,9 @@ class Tracker {
 
       activityList.appendChild(activityItem)
     })
+
+    const msg_parag = document.querySelector("#msg-parag") as HTMLParagraphElement
+    this.activities.length > 0 ? msg_parag.textContent = "Activities" : "You don't have any activities"
 
   }
 

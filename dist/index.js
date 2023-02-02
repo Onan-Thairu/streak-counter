@@ -32,6 +32,6 @@ submit_btn.addEventListener("click", () => {
     imgUrlInput.value = "";
     startDateInput.value = "";
     const bestDay = new BestDoneActivity(activityTracker).getBestDoneActivity();
-    console.log(bestDay);
+    console.log(activityTracker.activities);
 });
 //# sourceMappingURL=index.js.map

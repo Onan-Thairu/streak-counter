@@ -25,6 +25,8 @@ class Tracker {
             activityItem.addEventListener("click", () => this.openModal(activity));
             activityList.appendChild(activityItem);
         });
+        const msg_parag = document.querySelector("#msg-parag");
+        this.activities.length > 0 ? msg_parag.textContent = "Activities" : "You don't have any activities";
     }
     openModal(activity) {
         const modal = document.querySelector("#activity-modal");
