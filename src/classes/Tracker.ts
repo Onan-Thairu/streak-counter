@@ -27,7 +27,10 @@ class Tracker {
         <p>${activity.name}</p>
       `
 
-      activityItem.addEventListener("click", () => this.openModal(activity))
+      activityItem.addEventListener("click", () => {
+        // activityItem.classList.add("modal-card")
+        this.openModal(activity)
+      })
 
       activityList.appendChild(activityItem)
     })
@@ -42,12 +45,14 @@ class Tracker {
     const modal = document.querySelector("#activity-modal") as HTMLDivElement
     const days = Day.create(activity).getDays()
     modal.innerHTML = `
-      <img src="${activity.imgUrl}" alt="${activity.name}" width="50px" />
-      <p>${activity.startDate.toLocaleDateString()}</p>
-      <p>${activity.name}</p>
-      <p>${days} Days</p>
-      <button id="modal-close-btn">Close</button>
-      <button id="delete-btn">Delete</button>
+      <div class="modal-content">
+        <img src="${activity.imgUrl}" alt="${activity.name}" />
+        <p>${activity.startDate.toLocaleDateString()}</p>
+        <p>${activity.name}</p>
+        <p>${days} Days</p>
+        <button id="modal-close-btn">Close</button>
+        <button id="delete-btn">Delete</button>
+      </div>
     `
 
     const deleteButton = document.querySelector("#delete-btn") as HTMLButtonElement
@@ -55,6 +60,9 @@ class Tracker {
       this.deleteActivity(activity)
       this.closeModal()
     })
+
+    const closeBtn = document.querySelector("#modal-close-btn") as HTMLButtonElement
+    closeBtn.addEventListener("click", () => this.closeModal())
 
     modal.style.display = "block"
   }

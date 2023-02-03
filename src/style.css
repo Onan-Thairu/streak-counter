@@ -90,3 +90,48 @@ input {
 .message {
   margin-bottom: 1em;
 }
+#activity-modal {
+  display: none;
+  position: fixed;
+  /* background-color: yellow; */
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  height: 60%;
+  margin: 2em auto;
+  /* overflow: auto; */
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  width: 90%;
+  height: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.modal-content img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.modal-content p {
+  margin: .5em;
+}
+#modal-close-btn {
+  background-color: #fefefe;
+  color: #fe714c;
+  border: 1px solid red;
+  padding: 5px;
+  font-weight: 900;
+  margin-right: .8em;
+}
+#delete-btn {
+  background-color: red;
+  border: none;
+  padding: 5px;
+  color: #fefefe;
+  font-weight: 900;
+}
