@@ -67,12 +67,15 @@ input {
 }
 #activity-list {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1em;
 }
 .card {
   border: 2px solid #fe714c;
   padding: .8em;
   border-radius: 5px;
+  width: 10em;
 }
 .card p{
   font-weight: 200;
