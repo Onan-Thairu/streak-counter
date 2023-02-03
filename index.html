@@ -30,6 +30,7 @@
 
       <div class="new-activity-form">
         <h3>Please Add A Task</h3>
+        <h2 id="missing-data"></h2>
 
         <p class="label-name">Task Name<p>
         <input type="text" id="name" required><br>
@@ -46,7 +47,12 @@
 
     <div class="activities">
       <div class="message">
-        <p id="msg-parag">You Don't Have Any Activity</p>
+        <div>
+          <p id="msg-parag">You Don't Have Any Activity</p>
+        </div>
+        <div class="best-streak-div">
+          <button id="best-streak-btn">Best Streak</button>
+        </div>
       </div>
       <div id="activity-list"></div>
     </div>

@@ -58,6 +58,12 @@ input {
   color: #fff;
   font-weight: 900;
 }
+#missing-data {
+  font-size: 1em;
+  color: white;
+  background-color: red;
+  font-weight: 900;
+}
 .activities {
   width: 90vw;
   margin: 1em auto;
@@ -135,6 +141,15 @@ input {
   padding: 5px;
   color: #fefefe;
   font-weight: 900;
+}
+#best-streak-btn {
+  background-color: #fe714c;
+  border: none;
+  padding: 5px;
+  color: #fff;
+  font-weight: 900;
+  margin-top: 1em;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 730px) {

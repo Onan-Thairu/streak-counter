@@ -27,8 +27,14 @@ submit_btn.addEventListener("click", () => {
   const imgUrlInput = document.getElementById("image-url") as HTMLInputElement
   const startDateInput = document.querySelector("#start-date") as HTMLInputElement
 
+
   if (!nameInput.value || !imgUrlInput.value || !startDateInput.value) {
-    alert("Please fill out all fields.")
+    // alert("Please fill out all fields.")
+    const alertMsg = document.querySelector("#missing-data") as HTMLParagraphElement
+    alertMsg.textContent = "Please fill out all the fields";
+    setTimeout(function () {
+      alertMsg.textContent = ""
+    }, 5000);
     return
   }
 
@@ -43,7 +49,13 @@ submit_btn.addEventListener("click", () => {
   imgUrlInput.value = ""
   startDateInput.value = ""
 
-
-  const bestDay = new BestDoneActivity(activityTracker).getBestDoneActivity()
+  const bestStreakBtn = document.querySelector("#best-streak-btn") as HTMLButtonElement
+  // const bestSteakDiv = document.querySelector(".best-streak-div") as HTMLDivElement
+  // activityTracker.activities.length = 0 ? bestSteakDiv.classList.add("hidden") : bestSteakDiv.classList.remove("hidden")
+  
+  bestStreakBtn.addEventListener("click", () => {
+    const bestDay = new BestDoneActivity(activityTracker).getBestDoneActivity()
+    activityTracker.openModal(bestDay)
+  })
 
 })
