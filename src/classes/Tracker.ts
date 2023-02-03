@@ -27,10 +27,7 @@ class Tracker {
         <p>${activity.name}</p>
       `
 
-      activityItem.addEventListener("click", () => {
-        // activityItem.classList.add("modal-card")
-        this.openModal(activity)
-      })
+      activityItem.addEventListener("click", () => this.openModal(activity))
 
       activityList.appendChild(activityItem)
     })
