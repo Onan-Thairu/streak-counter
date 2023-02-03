@@ -18,6 +18,7 @@
 .activity-form {
   background-color: #fe714c;
   display: flex;
+  flex-wrap: wrap;
   padding: 2em;
   align-items: center;
   justify-content: space-around;
@@ -142,5 +143,22 @@ input {
     flex-direction: column-reverse;
     gap: 2em;
     flex-wrap: wrap;
+  }
+  .hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .activity-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .hidden {
+    display: none;
+  }
+  .new-activity-form {
+    width: 80vw;
   }
 }
